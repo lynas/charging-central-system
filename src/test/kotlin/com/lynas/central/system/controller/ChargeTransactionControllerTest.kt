@@ -2,10 +2,14 @@ package com.lynas.central.system.controller
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.lynas.central.system.dto.ChargeTransactionStartRequest
+import com.lynas.central.system.service.ChargeTransactionService
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.mockito.Mockito.mock
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.boot.test.context.TestConfiguration
+import org.springframework.context.annotation.Bean
 import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.post
@@ -21,6 +25,15 @@ class ChargeTransactionControllerTest {
 
     @Autowired
     lateinit var webApplicationContext: WebApplicationContext
+
+    @Autowired
+    lateinit var chargeTransactionService: ChargeTransactionService
+
+    @TestConfiguration
+    class ControllerTestConfig{
+        @Bean
+        fun chargeTransactionService(): ChargeTransactionService = mock()
+    }
 
     @BeforeEach
     fun setup() {
@@ -88,8 +101,5 @@ class ChargeTransactionControllerTest {
             contentType = MediaType.APPLICATION_JSON
         }.andExpect { status { isBadRequest() } }
     }
-
-
-
 
 }

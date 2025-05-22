@@ -1,5 +1,7 @@
 # Central system
 
+![Build](https://github.com/lynas/charging-central-system/actions/workflows/build.yml/badge.svg)
+
 ## How to run
 
 - Run docker desktop
