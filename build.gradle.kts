@@ -30,8 +30,6 @@ dependencies {
 	implementation("org.flywaydb:flyway-core")
 	implementation("org.flywaydb:flyway-database-postgresql")
 
-
-
 	developmentOnly("org.springframework.boot:spring-boot-docker-compose")
 
 	runtimeOnly("org.postgresql:postgresql")
@@ -44,7 +42,6 @@ dependencies {
 	testImplementation("org.testcontainers:postgresql")
 	testImplementation("org.testcontainers:rabbitmq")
 	testImplementation("org.testcontainers:junit-jupiter")
-
 	testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
 }
 
