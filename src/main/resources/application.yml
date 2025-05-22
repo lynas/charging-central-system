@@ -1,0 +1,17 @@
+server:
+    port: 8088
+
+spring:
+  threads:
+    virtual:
+      enabled: true
+  application:
+    name: central-system
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:mydatabase}
+    username: ${POSTGRES_USERNAME:myuser}
+    password: ${POSTGRES_PASSWORD:secret}
+  docker:
+    compose:
+      lifecycle-management: start_only
