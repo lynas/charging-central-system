@@ -10,6 +10,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders
 import org.springframework.web.context.WebApplicationContext
 import org.testcontainers.containers.JdbcDatabaseContainer
 import org.testcontainers.containers.PostgreSQLContainerProvider
+import org.testcontainers.containers.RabbitMQContainer
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
 
@@ -39,6 +40,10 @@ class BaseTest {
                     it.start()
                     it
                 }
+
+        /*@Container
+        private val rabbitmqContainer: RabbitMQContainer<*> =
+            RabbitMQContainer().start()*/
 
         @JvmStatic
         @DynamicPropertySource

@@ -42,6 +42,7 @@ dependencies {
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	testImplementation("org.springframework.boot:spring-boot-testcontainers")
 	testImplementation("org.testcontainers:postgresql")
+	testImplementation("org.testcontainers:rabbitmq")
 	testImplementation("org.testcontainers:junit-jupiter")
 
 	testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")

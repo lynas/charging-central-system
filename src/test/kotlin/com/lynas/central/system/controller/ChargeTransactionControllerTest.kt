@@ -5,7 +5,10 @@ import com.lynas.central.system.BaseTest
 import com.lynas.central.system.dto.ChargeTransactionStartRequest
 import com.lynas.central.system.service.ChargeTransactionService
 import org.junit.jupiter.api.Test
+import org.mockito.kotlin.mock
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.context.TestConfiguration
+import org.springframework.context.annotation.Bean
 import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.post
 import java.net.URI
@@ -17,6 +20,12 @@ class ChargeTransactionControllerTest: BaseTest() {
     lateinit var chargeTransactionService: ChargeTransactionService
 
     private val url = "/charge-transactions"
+
+    @TestConfiguration
+    class ControllerTestConfig {
+        @Bean
+        fun chargeTransactionService(): ChargeTransactionService = mock()
+    }
 
     @Test
     fun `should accept valid charge request`() {
