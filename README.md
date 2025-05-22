@@ -29,7 +29,7 @@
     "status": "ACCEPTED"
 }
 ```
-- Given invalid input API returns error like following
+- Given invalid input API returns error `400 BAD REQUEST` like following
 ``` 
 {
     "errors": {
@@ -63,6 +63,7 @@
 - DLQ can be processed later depending on business need
 - App is written with clean and testable code in mind
 - All business logic is properly tested
+- Added GitHub action to test on every push to master branch
 
 ## Future improvements
 
