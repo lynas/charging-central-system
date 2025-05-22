@@ -10,12 +10,10 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito.mock
 import org.mockito.Mockito.verify
-import org.springframework.boot.test.context.SpringBootTest
 import org.mockito.kotlin.*
 import java.net.URI
 import java.util.UUID
 
-@SpringBootTest
 class ChargeTransactionAuthorizationServiceTest {
     private lateinit var repository: ChargeTransactionAuthorizationRepository
     private lateinit var accessService: DriverChargePointAccessService

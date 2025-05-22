@@ -1,44 +1,20 @@
 package com.lynas.central.system.controller
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import com.lynas.central.system.BaseTest
 import com.lynas.central.system.dto.ChargeTransactionStartRequest
 import com.lynas.central.system.service.ChargeTransactionService
-import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.mockito.Mockito.mock
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.boot.test.context.TestConfiguration
-import org.springframework.context.annotation.Bean
 import org.springframework.http.MediaType
-import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.post
-import org.springframework.test.web.servlet.setup.MockMvcBuilders
-import org.springframework.web.context.WebApplicationContext
 import java.net.URI
-import java.util.UUID
+import java.util.*
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class ChargeTransactionControllerTest {
-
-    lateinit var mockMvc: MockMvc
-
-    @Autowired
-    lateinit var webApplicationContext: WebApplicationContext
+class ChargeTransactionControllerTest: BaseTest() {
 
     @Autowired
     lateinit var chargeTransactionService: ChargeTransactionService
-
-    @TestConfiguration
-    class ControllerTestConfig{
-        @Bean
-        fun chargeTransactionService(): ChargeTransactionService = mock()
-    }
-
-    @BeforeEach
-    fun setup() {
-        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build()
-    }
 
     private val url = "/charge-transactions"
 
