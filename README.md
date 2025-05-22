@@ -39,6 +39,9 @@
     "timestamp": "2025-05-22T11:09:14.314372Z"
 }
 ```
+- API documentation available in following URL
+- http://localhost:8088/swagger-ui/index.html
+![api-doc.png](api-doc.png)
 
 ## Application design
 
